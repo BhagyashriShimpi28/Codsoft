@@ -27,12 +27,12 @@ public class StudentGradeCalculator extends Application{
 	private Label totalMarksLabel = new Label("Total Marks: ");
 	private Label averagePercentageLabel = new Label("Average Percentage: ");
     private Label gradeLabel = new Label("Grade: ");
-    private VBox subjectFieldsContainer = new VBox(10);  // Container for subject rows
-    private int rowCount = 3; // Initially, 3 rows
+    private VBox subjectFieldsContainer = new VBox(10);  
+    private int rowCount = 3; 
     
     private Button addRowButton;
     private Button calculateButton;
-    private Button resetButton; // New Reset button
+    private Button resetButton; 
     
     public static void main(String[] args) {
         launch(args);
@@ -50,15 +50,15 @@ public class StudentGradeCalculator extends Application{
 	        marksColumn.setCellValueFactory(new PropertyValueFactory<>("marks"));
 
 	        
-	     // Create buttons
+	      buttons
 	        addRowButton = new Button("Add Row");
 	        addRowButton.setOnAction(e -> addRow());
 	        addRowButton.setStyle( 
-	            "-fx-background-color: #17a2b8; " +              // Bootstrap primary color
-	            "-fx-text-fill: #ffffff; " +                    // Text color
-	            "-fx-font-weight: bold; " +                    // Bold text
-	            "-fx-background-radius: 6px; "   +            // Rounded corners
-	            "-fx-padding: 8px 16px; "                     // Padding
+	            "-fx-background-color: #17a2b8; " +              
+	            "-fx-text-fill: #ffffff; " +                    
+	            "-fx-font-weight: bold; " +                    
+	            "-fx-background-radius: 6px; "   +           
+	            "-fx-padding: 8px 16px; "                    
 	        );
 	       
 	        	
@@ -73,17 +73,17 @@ public class StudentGradeCalculator extends Application{
 	            
 	        );
 	        
-	        resetButton = new Button("Reset"); // Create Reset button
+	        resetButton = new Button("Reset"); 
 	        resetButton.setOnAction(e -> resetCalculator()); // Set action handler
 	        resetButton.setStyle(
-	        	    "-fx-background-color: #dc3545; " +    // Bootstrap danger color
-	        	    "-fx-text-fill: #ffffff; " +           // Text color
-	        	    "-fx-font-weight: bold; " +           // Bold text
-	        	    "-fx-background-radius: 6px; " +      // Rounded corners
-	        	    "-fx-padding: 8px 16px; "             // Padding
+	        	    "-fx-background-color: #dc3545; " +    
+	        	    "-fx-text-fill: #ffffff; " +          
+	        	    "-fx-font-weight: bold; " +         
+	        	    "-fx-background-radius: 6px; " +     
+	        	    "-fx-padding: 8px 16px; "          
 	        	);
 	        
-	     	// Create layout    
+	     	// layout    
 	        BorderPane root = new BorderPane();
 	        root.setCenter(createCenterPane());
 	        
@@ -92,8 +92,6 @@ public class StudentGradeCalculator extends Application{
 	        primaryStage.show();
 	        
 	} 
-	
-	        
 
 			private GridPane createCenterPane() {
 	        	GridPane centerPane = new GridPane();
@@ -102,12 +100,12 @@ public class StudentGradeCalculator extends Application{
 	            centerPane.setPadding(new Insets(10, 10, 10, 10));
 	            centerPane.setAlignment(Pos.CENTER); 
 	            
-	     // Add a top margin	        
+	     	        
 	        VBox vbox = new VBox(10);
 	        vbox.setPadding(new Insets(10, 10, 10, 10));
 
 	        
-	        // Add title
+	        //  title
 	        Label titleLabel = new Label("Grade Calculator");
 	        titleLabel.setStyle("-fx-font-size: 40px; -fx-font-weight: bold; -fx-text-fill: skyblue; -fx-font-family: italic;");
 	           
@@ -128,7 +126,7 @@ public class StudentGradeCalculator extends Application{
 	        }
 	        
 	        HBox buttonsBox = new HBox(10);
-	        buttonsBox.getChildren().addAll(addRowButton, calculateButton,resetButton); // Add both buttons
+	        buttonsBox.getChildren().addAll(addRowButton, calculateButton,resetButton);
   
 	        
 	        VBox resultBox = new VBox(10);
@@ -154,7 +152,7 @@ public class StudentGradeCalculator extends Application{
 	    }
 
 	private HBox createSubjectRow() {
-        HBox hbox = new HBox(10); // Spacing between fields
+        HBox hbox = new HBox(10); 
 
   
         TextField nameField = new TextField();
@@ -200,7 +198,7 @@ public class StudentGradeCalculator extends Application{
 		}
         if (totalSubjects == 0) {
             showAlert("No subjects entered.");
-            return;      // Stop calculation if no subjects are entered
+            return;     
         }
 			
 			double averagePercentage = (double) totalMarks / totalSubjects;
